@@ -10,23 +10,10 @@ export const gameEven = () => {
  for (let gameCounts = 0; gameCounts < numOfRightAnwers; gameCounts += 1) {
    let number = getRandomIntInclusive(1,100);
    let rightAnswer;
-   if (number % 2 === 0) {
-    rightAnswer = 'yes'
-   } else {
-    rightAnswer = 'no'
-   }
+   number % 2 === 0 ? rightAnswer = 'yes' : rightAnswer = 'no';
    console.log('Question: ' + number)
    let userAnswer = readlineSync.question('Your answer: ')
-   if (userAnswer === rightAnswer) {
-    console.log('Correct!')
-    userRightAnwers += 1
-   } else {
-    console.log('Wrong!')
-   }
+   userAnswer === rightAnswer ? (console.log('Correct!'), userRightAnwers += 1) : console.log('Wrong!')
  }
- if (userRightAnwers === numOfRightAnwers) {
-    return (console.log('Congratulations, ' + name + '!'))
- } else {
-    return (console.log('Try your best next time, ' + name + '!'))
- }
+ return (userRightAnwers === numOfRightAnwers ? console.log('Congratulations, ' + name + '!') : console.log('Try your best next time, ' + name + '!'))
 };
