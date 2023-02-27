@@ -7,7 +7,6 @@ export const gameEven = () => {
  const numOfRightAnwers = 3;
  let userRightAnwers = 0;
  console.log(`Answer "yes" if the number is even, otherwise answer "no"`);
-
  for (let gameCounts = 0; gameCounts < numOfRightAnwers; gameCounts += 1) {
    let number = getRandomIntInclusive(1,100);
    let rightAnswer;
