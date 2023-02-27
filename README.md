@@ -13,9 +13,6 @@ How to install :
 
 [![asciicast](https://asciinema.org/a/2yuigmLmOK8FgO5dtOjR5Iyjs.svg)](https://asciinema.org/a/2yuigmLmOK8FgO5dtOjR5Iyjs)  
 
-
-add ascii here later////  
-
 How to use :  
 
 later something here////  
