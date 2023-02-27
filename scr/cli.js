@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
 
-export function MakeFirstName (userName) {
-    userName = readlineSync.question('May I have your name? ');
+function GameStartNameAsk () {
+    console.log('Welcome to the Brain Games!')
+    const userName = readlineSync.question('May I have your name? ');
     console.log('Hello, ' + userName + '!');
+    return userName;
 }
+export { GameStartNameAsk };
