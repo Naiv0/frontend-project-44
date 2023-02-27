@@ -7,9 +7,11 @@ How to install :
 
 1. Copy and write in terminal: "git clone git@github.com:Naiv0/frontend-project-44.git"  
 
-2. Write while inside of working directory : "npm install"  
+2. Write in terminal while inside of working directory : "npm install"  
 
-add ascii here later////  
+3. You are ready to play!  
+
+[![asciicast](https://asciinema.org/a/2yuigmLmOK8FgO5dtOjR5Iyjs.svg)](https://asciinema.org/a/2yuigmLmOK8FgO5dtOjR5Iyjs)  
 
 How to use :  
 
