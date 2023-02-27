@@ -9,6 +9,11 @@ How to install :
 
 2. Write in terminal while inside of working directory : "npm install"  
 
+3. You are ready to play!  
+
+[![asciicast](https://asciinema.org/a/2yuigmLmOK8FgO5dtOjR5Iyjs.svg)](https://asciinema.org/a/2yuigmLmOK8FgO5dtOjR5Iyjs)  
+
+
 add ascii here later////  
 
 How to use :  
