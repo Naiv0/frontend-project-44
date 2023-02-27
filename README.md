@@ -2,11 +2,18 @@
 [![Actions Status](https://github.com/Naiv0/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Naiv0/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/afef6a41dc4ee99ee9a5/maintainability)](https://codeclimate.com/github/Naiv0/frontend-project-44/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/afef6a41dc4ee99ee9a5/test_coverage)](https://codeclimate.com/github/Naiv0/frontend-project-44/test_coverage)
-How to install : n/
-1. Copy and write in terminal: "git clone git@github.com:Naiv0/frontend-project-44.git" n/
-2. Write while inside of working directory : "npm install" n/
-add ascii here later//// n/
-How to use : n/
-later something here//// n/
-Brain-even : n/
+How to install :  
+
+1. Copy and write in terminal: "git clone git@github.com:Naiv0/frontend-project-44.git"  
+
+2. Write while inside of working directory : "npm install"  
+
+add ascii here later////  
+
+How to use :  
+
+later something here////  
+
+Brain-even :  
+
 [![asciicast](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ.svg)](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ) n/
