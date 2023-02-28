@@ -1,5 +1,5 @@
 #!/bin/env node
 
-import { GameStartNameAsk } from "../scr/cli.js"
+import { gameStart } from "../scr/cli.js"
 
-GameStartNameAsk()
+gameStart()
