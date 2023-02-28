@@ -26,6 +26,7 @@ const AreUserRightCheck = () => {
         userAreRight = false
     }
 }
+
 const Congratulations = () => {
     return(console.log('Congratulations, ' + name + '!'));
 }
@@ -33,6 +34,15 @@ const Congratulations = () => {
 const GetSmallestAndBiggestNum = (num1,num2) => {
     if (num1 >= num2) smallestNum = num2, biggestNum = num1;
     if (num1 <= num2) smallestNum = num1, biggestNum = num2;
+}
+
+const GetGreatestCommonDivider = (smallestNum,biggestNum) => {
+    for (let j = smallestNum; j > 0; j -= 1) {
+        if (smallestNum % j === 0 && biggestNum % j === 0) {
+            rightAnswer = j
+            break;
+        }
+    }
 }
 
 export const gameEven = () => {
@@ -82,12 +92,7 @@ export const gameGCD = () => {
         let number1 = getRandomIntInclusive(1,100)
         let number2 = getRandomIntInclusive(1,100)
         GetSmallestAndBiggestNum(number1, number2);
-        for (let j = smallestNum; j > 0; j -= 1) {
-            if (smallestNum % j === 0 && biggestNum % j === 0) {
-                rightAnswer = j
-                break;
-            }
-        }
+        GetGreatestCommonDivider(smallestNum, biggestNum)
         console.log(`Question: ${number1} ${number2}`)
         userAnswer = readlineSync.question('Your answer: ');
         AreUserRightCheck();
