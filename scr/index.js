@@ -1,14 +1,33 @@
-import { GameStartNameAsk } from "./cli.js";
+import { nameAsk } from "./cli.js";
 import { getRandomIntInclusive } from "./random-num-in-range-inclusive.js";
 import readlineSync from 'readline-sync';
 
 const rightAnswersToWin = 3;
 let userAnswer;
 let rightAnswer;
+let name;
+let userRightAnwers;
+let userAreRight;
+
+const gameStart = () => {
+    console.log('Welcome to the Brain Games!')
+    name = nameAsk()
+    console.log('Hello, ' + name + '!')
+}
+
+const AreUserRightCheck = () => {
+    if (userAnswer == rightAnswer) {
+        console.log('Correct!');
+        userAreRight = true
+    } else {
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. \nLet's try again, ${name}!`);
+        userAreRight = false
+    }
+}
 
 export const gameEven = () => {
- const name = GameStartNameAsk();
- let userRightAnwers = 0;
+ gameStart()
+ userRightAnwers = 0;
  console.log(`Answer "yes" if the number is even, otherwise answer "no"`);
  for (let gameCounts = 0; gameCounts < rightAnswersToWin; gameCounts += 1) {
    let number = getRandomIntInclusive(1,100);
@@ -21,7 +40,7 @@ export const gameEven = () => {
 };
 
 export function gameCalc() {
-    const name = GameStartNameAsk();
+    gameStart()
     console.log('What is the result of the expression?');
     for (let i = 0; i < rightAnswersToWin; i += 1) {
         let number1 = getRandomIntInclusive(1, 100);
@@ -41,10 +60,11 @@ export function gameCalc() {
                 break;
         }
         userAnswer = readlineSync.question('Your answer: ');
-        if (userAnswer == rightAnswer) {
-            console.log('Correct!');
+        AreUserRightCheck();
+        if (userAreRight !== true) {
+           return null
         } else {
-            return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. \nLet's try again, ${name}!`);
+            //nothing
         }
     }
     return(console.log('Congratulations, ' + name + '!'));
