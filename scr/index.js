@@ -61,11 +61,7 @@ export function gameCalc() {
         }
         userAnswer = readlineSync.question('Your answer: ');
         AreUserRightCheck();
-        if (userAreRight !== true) {
-           return null
-        } else {
-            //nothing
-        }
+        if (userAreRight !== true) return null
     }
     return(console.log('Congratulations, ' + name + '!'));
 }
