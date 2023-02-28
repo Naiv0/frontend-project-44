@@ -8,6 +8,8 @@ let rightAnswer;
 let name;
 let userRightAnwers;
 let userAreRight;
+let smallestNum;
+let biggestNum
 
 const gameStart = () => {
     console.log('Welcome to the Brain Games!')
@@ -23,6 +25,14 @@ const AreUserRightCheck = () => {
         console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. \nLet's try again, ${name}!`);
         userAreRight = false
     }
+}
+const Congratulations = () => {
+    return(console.log('Congratulations, ' + name + '!'));
+}
+
+const GetSmallestAndBiggestNum = (num1,num2) => {
+    if (num1 >= num2) smallestNum = num2, biggestNum = num1;
+    if (num1 <= num2) smallestNum = num1, biggestNum = num2;
 }
 
 export const gameEven = () => {
@@ -63,5 +73,26 @@ export function gameCalc() {
         AreUserRightCheck();
         if (userAreRight !== true) return null
     }
-    return(console.log('Congratulations, ' + name + '!'));
+   Congratulations();
+}
+
+export const gameGCD = () => {
+    gameStart();
+    console.log('Find the greatest common divisor of given numbers.')
+    for (let i = 0; i < rightAnswersToWin; i += 1) {
+        let number1 = getRandomIntInclusive(1,100)
+        let number2 = getRandomIntInclusive(1,100)
+        GetSmallestAndBiggestNum(number1, number2);
+        for (let j = smallestNum; j > 0; j -= 1) {
+            if (smallestNum % j === 0 && biggestNum % j === 0) {
+                rightAnswer = j
+                break;
+            }
+        }
+        console.log(`Question: ${number1} ${number2}`)
+        userAnswer = readlineSync.question('Your answer: ');
+        AreUserRightCheck();
+        if (userAreRight !== true) return null
+    }
+   Congratulations();
 }
