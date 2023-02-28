@@ -45,7 +45,7 @@ export const gameEven = () => {
    userAnswer = readlineSync.question('Your answer: ')
    userAnswer === rightAnswer ? (console.log('Correct!'), userRightAnwers += 1) : console.log('Wrong!')
  }
- return (userRightAnwers === rightAnswersToWin ? console.log('Congratulations, ' + name + '!') : console.log('Try your best next time, ' + name + '!'))
+ return (userRightAnwers === rightAnswersToWin ? Congratulations() : console.log('Try your best next time, ' + name + '!'))
 };
 
 export function gameCalc() {
