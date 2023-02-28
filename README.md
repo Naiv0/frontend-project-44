@@ -15,8 +15,12 @@ How to install :
 
 How to use :  
 
-later something here////  
 
 Brain-even :  
 
-[![asciicast](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ.svg)](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ) n/
+[![asciicast](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ.svg)](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ)  
+
+Brain-cacl :  
+
+[![asciicast](https://asciinema.org/a/FAmf9amcyzukGiNsQQWazCrSk.svg)](https://asciinema.org/a/FAmf9amcyzukGiNsQQWazCrSk)  
+
