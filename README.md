@@ -20,7 +20,11 @@ Brain-even :
 
 [![asciicast](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ.svg)](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ)  
 
-Brain-cacl :  
+Brain-calc :  
 
 [![asciicast](https://asciinema.org/a/FAmf9amcyzukGiNsQQWazCrSk.svg)](https://asciinema.org/a/FAmf9amcyzukGiNsQQWazCrSk)  
+
+Brain-greatest-common-divider :  
+
+[![asciicast](https://asciinema.org/a/llU6WXqw5MtqM5Q7cOFrt2f2Z.svg)](https://asciinema.org/a/llU6WXqw5MtqM5Q7cOFrt2f2Z)  
 
