@@ -6,7 +6,7 @@ const rightAnswersToWin = 3;
 let userAnswer;
 let rightAnswer;
 let name;
-let userRightAnwers;
+let userRightAnwers = 0;
 let userAreRight;
 let smallestNum;
 let biggestNum
@@ -37,7 +37,6 @@ const GetSmallestAndBiggestNum = (num1,num2) => {
 
 export const gameEven = () => {
  gameStart()
- userRightAnwers = 0;
  console.log(`Answer "yes" if the number is even, otherwise answer "no"`);
  for (let gameCounts = 0; gameCounts < rightAnswersToWin; gameCounts += 1) {
    let number = getRandomIntInclusive(1,100);
