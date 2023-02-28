@@ -1,4 +1,4 @@
 #!/bin/env node
-import { gameEven } from "../scr/game-even-logic.js"
+import { gameEven } from "../scr/index.js"
 
 gameEven();
