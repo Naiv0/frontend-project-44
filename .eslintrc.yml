@@ -8,6 +8,6 @@ parserOptions:
   sourceType: module
 rules: {
   no-console: 0,
-  import: false ,
-  extensions: false,
+  import: 0 ,
+  extensions: 0,
 }
