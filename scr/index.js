@@ -10,6 +10,13 @@ let userRightAnwers = 0;
 let userAreRight;
 let smallestNum;
 let biggestNum
+let progression = [];
+const progressionLength = 10;
+let progressionStartNum;
+let progressionStep;
+let hiddenNum;
+let roundProgresstion;
+let progressionWithHidden;
 
 const gameStart = () => {
     console.log('Welcome to the Brain Games!')
@@ -43,6 +50,30 @@ const GetGreatestCommonDivider = (smallestNum,biggestNum) => {
             break;
         }
     }
+}
+
+const GetRandomProgression = () => {
+    progressionStartNum = getRandomIntInclusive(1,25)
+    progressionStep = getRandomIntInclusive(1,10)
+    for (let k = 1; k < progressionLength; k += 1){
+        progression.push(progressionStartNum + (progressionStep * k))
+    }
+    // console.log(progression) //debug
+    return progression;
+}
+
+const makeHiddenNumAnswer = (arrOfNums) => {
+    let numberOfNumToHideInProgression = getRandomIntInclusive(1,10) - 1
+    hiddenNum = arrOfNums[numberOfNumToHideInProgression]
+    rightAnswer = hiddenNum;
+    progressionWithHidden = arrOfNums;
+    progressionWithHidden[numberOfNumToHideInProgression] = '..'
+}
+
+const clearProgressions = () => {
+   progression = [];
+   progressionWithHidden = [];
+   roundProgresstion = [];
 }
 
 export const gameEven = () => {
@@ -99,4 +130,19 @@ export const gameGCD = () => {
         if (userAreRight !== true) return null
     }
    Congratulations();
+}
+
+export const gameProgression = () => {
+    gameStart();
+    console.log('What number is missing in the progression?')
+    for (let i = 0; i < rightAnswersToWin; i += 1) {
+        clearProgressions();
+        roundProgresstion = GetRandomProgression();
+        makeHiddenNumAnswer(roundProgresstion);
+        console.log(`Question: ${progressionWithHidden.join(' ')}`);
+        userAnswer = readlineSync.question('Your answer: ')
+        AreUserRightCheck();
+        if (userAreRight !== true) return null
+    }
+    Congratulations();
 }
