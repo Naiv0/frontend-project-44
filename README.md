@@ -28,3 +28,6 @@ Brain-greatest-common-divider :
 
 [![asciicast](https://asciinema.org/a/llU6WXqw5MtqM5Q7cOFrt2f2Z.svg)](https://asciinema.org/a/llU6WXqw5MtqM5Q7cOFrt2f2Z)  
 
+Brain-progression :  
+
+[![asciicast](https://asciinema.org/a/QCqcCNZhy1TE5rjqcjoDCmgjy.svg)](https://asciinema.org/a/QCqcCNZhy1TE5rjqcjoDCmgjy)  
