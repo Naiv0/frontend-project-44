@@ -115,7 +115,7 @@ export const gameEven = () => {
 export const gameCalc = () => {
   gameStart();
   console.log('What is the result of the expression?');
-  for (let i = 0; i < rightAnswersToWin; i += 1) {
+  for (let u = 0; u < rightAnswersToWin; u += 1) {
     const number1 = getRandomIntInclusive(1, 100);
     const number2 = getRandomIntInclusive(1, 100);
     switch (getRandomIntInclusive(1, 3)) {
@@ -145,7 +145,7 @@ export const gameCalc = () => {
 export const gameGCD = () => {
   gameStart();
   console.log('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i < rightAnswersToWin; i += 1) {
+  for (let g = 0; g < rightAnswersToWin; g += 1) {
     const number1 = getRandomIntInclusive(1, 100);
     const number2 = getRandomIntInclusive(1, 100);
     GetSmallestAndBiggestNum(number1, number2);
@@ -161,7 +161,7 @@ export const gameGCD = () => {
 export const gameProgression = () => {
   gameStart();
   console.log('What number is missing in the progression?');
-  for (let i = 0; i < rightAnswersToWin; i += 1) {
+  for (let m = 0; m < rightAnswersToWin; m += 1) {
     clearProgressions();
     roundProgresstion = GetRandomProgression();
     makeHiddenNumAnswer(roundProgresstion);
@@ -176,7 +176,7 @@ export const gameProgression = () => {
 export const gamePrime = () => {
   gameStart();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 0; i < rightAnswersToWin; i += 1) {
+  for (let h = 0; h < rightAnswersToWin; h += 1) {
     const number = getRandomIntInclusive(1, 100);
     numberIsPrimeCheck(number);
     console.log(`Question: ${number}`);
