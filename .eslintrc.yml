@@ -1,13 +1,12 @@
 env:
-  browser: true
   es2021: true
-extends: eslint:recommended
+  node: true
+extends: airbnb-base
 overrides: []
 parserOptions:
   ecmaVersion: latest
   sourceType: module
 rules: {
-  no-console: 0,
-  import: 0 ,
-  extensions: 0,
+  "no-console": "off",
+  "import/extensions": "off"
 }
