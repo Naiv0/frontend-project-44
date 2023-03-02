@@ -118,11 +118,11 @@ const GetRandomProgression = () => {
 };
 
 const makeHiddenNumAnswer = (arrOfNums) => {
-  const numberOfNumToHideInProgression = getRandomIntInclusive(1, 10) - 1;
-  hiddenNum = arrOfNums[numberOfNumToHideInProgression];
+  const numberOfNumToHideInProgression = getRandomIntInclusive(1, 10);
+  hiddenNum = arrOfNums[numberOfNumToHideInProgression - 1];
   rightAnswer = hiddenNum;
   progressionWithHidden = arrOfNums;
-  progressionWithHidden[numberOfNumToHideInProgression] = '..';
+  progressionWithHidden[numberOfNumToHideInProgression - 1] = '..';
 };
 
 const clearProgressions = () => {
