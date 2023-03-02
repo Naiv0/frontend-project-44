@@ -79,6 +79,19 @@ const clearProgressions = () => {
    roundProgresstion = [];
 }
 
+const numberIsPrimeCheck = (num) => {
+    for (let i = 2; i < num; i += 1) {
+        if (num % i === 0){
+            rightAnswer = 'no'
+            return null
+        }
+        // nothing
+    }
+    rightAnswer = 'yes'
+    return null
+};
+
+
 export const gameEven = () => {
  gameStart()
  console.log(`Answer "yes" if the number is even, otherwise answer "no"`);
@@ -93,7 +106,7 @@ export const gameEven = () => {
  Congratulations();
 };
 
-export function gameCalc() {
+export const gameCalc = () => {
     gameStart()
     console.log('What is the result of the expression?');
     for (let i = 0; i < rightAnswersToWin; i += 1) {
@@ -144,7 +157,21 @@ export const gameProgression = () => {
         roundProgresstion = GetRandomProgression();
         makeHiddenNumAnswer(roundProgresstion);
         console.log(`Question: ${progressionWithHidden.join(' ')}`);
-        userAnswer = readlineSync.question('Your answer: ')
+        askUserAnswer();
+        AreUserRightCheck();
+        if (userAreRight !== true) return null
+    }
+    Congratulations();
+}
+
+export const gamePrime = () => {
+    gameStart();
+    console.log(`Answer "yes" if given number is prime. Otherwise answer "no".`);
+    for (let i = 0; i < rightAnswersToWin; i += 1) {
+        let number = getRandomIntInclusive(1,100); 
+        numberIsPrimeCheck(number);
+        console.log(`Question: ${number}`)
+        askUserAnswer();
         AreUserRightCheck();
         if (userAreRight !== true) return null
     }
