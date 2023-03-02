@@ -15,19 +15,24 @@ How to install :
 
 How to use :  
 
+    While inside of priject directory in terminal type: "make" and one of the following games :
 
-Brain-even :  
+brain-even :  
 
 [![asciicast](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ.svg)](https://asciinema.org/a/xty6nQXxSywthGdhR70u7OHjJ)  
 
-Brain-calc :  
+brain-calc :  
 
 [![asciicast](https://asciinema.org/a/FAmf9amcyzukGiNsQQWazCrSk.svg)](https://asciinema.org/a/FAmf9amcyzukGiNsQQWazCrSk)  
 
-Brain-greatest-common-divider :  
+brain-greatest-common-divider :  
 
 [![asciicast](https://asciinema.org/a/llU6WXqw5MtqM5Q7cOFrt2f2Z.svg)](https://asciinema.org/a/llU6WXqw5MtqM5Q7cOFrt2f2Z)  
 
-Brain-progression :  
+brain-progression :  
 
 [![asciicast](https://asciinema.org/a/QCqcCNZhy1TE5rjqcjoDCmgjy.svg)](https://asciinema.org/a/QCqcCNZhy1TE5rjqcjoDCmgjy)  
+
+brain-prime  
+
+[![asciicast](https://asciinema.org/a/0uDn3WRnDe1c3UR6rMOy7tEVL.svg)](https://asciinema.org/a/0uDn3WRnDe1c3UR6rMOy7tEVL)  
