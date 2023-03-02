@@ -18,6 +18,31 @@ let roundProgresstion;
 let progressionWithHidden;
 let GameNumber;
 
+export const gameStart = (WhatKindOfGame) => {
+  console.log('Welcome to the Brain Games!');
+  name = nameAsk();
+  console.log(`Hello, ${name}!`);
+  switch (WhatKindOfGame) {
+    case 1:
+      console.log('Answer "yes" if the number is even, otherwise answer "no"');
+      break;
+    case 2:
+      console.log('What is the result of the expression?');
+      break;
+    case 3:
+      console.log('Find the greatest common divisor of given numbers.');
+      break;
+    case 4:
+      console.log('What number is missing in the progression?');
+      break;
+    case 5:
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+      break;
+    default:
+      break;
+  }
+};
+
 const updateNumber = () => {
   GameNumber = getRandomIntInclusive(1, 100);
   return GameNumber;
@@ -118,91 +143,70 @@ const numberIsPrimeCheck = (num) => {
   return null;
 };
 
-export const gameStart = (WhatKindOfGame) => {
-  console.log('Welcome to the Brain Games!');
-  name = nameAsk();
-  console.log(`Hello, ${name}!`);
-  switch (WhatKindOfGame) {
-    case 1:
-      console.log('Answer "yes" if the number is even, otherwise answer "no"');
-      for (let i = 0; i < roundsCount; i += 1) {
-        const number = updateNumber();
-        isEven(number);
-        console.log(`Question: ${number}`);
-        askUserAnswer();
-        AreUserRightCheck();
-        if (userAreRight !== true) return null;
-      }
-      return Congratulations();
-    case 2:
-      console.log('What is the result of the expression?');
-      for (let u = 0; u < roundsCount; u += 1) {
-        const number1 = updateNumber();
-        const number2 = updateNumber();
-        selectCalcGameAction(number1, number2);
-        askUserAnswer();
-        AreUserRightCheck();
-        if (userAreRight !== true) return null;
-      }
-      return Congratulations();
-    case 3:
-      console.log('Find the greatest common divisor of given numbers.');
-      for (let g = 0; g < roundsCount; g += 1) {
-        const number1 = updateNumber();
-        const number2 = updateNumber();
-        GetSmallestAndBiggestNum(number1, number2);
-        GetGreatestCommonDivider();
-        console.log(`Question: ${number1} ${number2}`);
-        askUserAnswer();
-        AreUserRightCheck();
-        if (userAreRight !== true) return null;
-      }
-      return Congratulations();
-    case 4:
-      console.log('What number is missing in the progression?');
-      for (let m = 0; m < roundsCount; m += 1) {
-        clearProgressions();
-        roundProgresstion = GetRandomProgression();
-        makeHiddenNumAnswer(roundProgresstion);
-        console.log(`Question: ${progressionWithHidden.join(' ')}`);
-        askUserAnswer();
-        AreUserRightCheck();
-        if (userAreRight !== true) return null;
-      }
-      return Congratulations();
-    case 5:
-      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-      for (let h = 0; h < roundsCount; h += 1) {
-        const number = updateNumber();
-        numberIsPrimeCheck(number);
-        console.log(`Question: ${number}`);
-        askUserAnswer();
-        AreUserRightCheck();
-        if (userAreRight !== true) return null;
-      }
-      return Congratulations();
-    default:
-      break;
-  }
-  return null;
-};
-
 export const gameEven = () => {
   gameStart(1);
+  for (let i = 0; i < roundsCount; i += 1) {
+    const number = updateNumber();
+    isEven(number);
+    console.log(`Question: ${number}`);
+    askUserAnswer();
+    AreUserRightCheck();
+    if (userAreRight !== true) return null;
+  }
+  return Congratulations();
 };
 
 export const gameCalc = () => {
   gameStart(2);
+  for (let u = 0; u < roundsCount; u += 1) {
+    const number1 = updateNumber();
+    const number2 = updateNumber();
+    selectCalcGameAction(number1, number2);
+    askUserAnswer();
+    AreUserRightCheck();
+    if (userAreRight !== true) return null;
+  }
+  return Congratulations();
 };
 
 export const gameGCD = () => {
   gameStart(3);
+  for (let g = 0; g < roundsCount; g += 1) {
+    const number1 = updateNumber();
+    const number2 = updateNumber();
+    GetSmallestAndBiggestNum(number1, number2);
+    GetGreatestCommonDivider();
+    console.log(`Question: ${number1} ${number2}`);
+    askUserAnswer();
+    AreUserRightCheck();
+    if (userAreRight !== true) return null;
+  }
+  return Congratulations();
 };
 
 export const gameProgression = () => {
   gameStart(4);
+  for (let m = 0; m < roundsCount; m += 1) {
+    clearProgressions();
+    roundProgresstion = GetRandomProgression();
+    makeHiddenNumAnswer(roundProgresstion);
+    console.log(`Question: ${progressionWithHidden.join(' ')}`);
+    askUserAnswer();
+    AreUserRightCheck();
+    if (userAreRight !== true) return null;
+  }
+  return Congratulations();
 };
 
 export const gamePrime = () => {
   gameStart(5);
+  for (let h = 0; h < roundsCount; h += 1) {
+    const number = updateNumber();
+    numberIsPrimeCheck(number);
+    console.log(`Question: ${number}`);
+    askUserAnswer();
+    AreUserRightCheck();
+    if (userAreRight !== true) return null;
+  }
+  return Congratulations();
 };
