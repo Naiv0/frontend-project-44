@@ -6,7 +6,6 @@ const rightAnswersToWin = 3;
 let userAnswer;
 let rightAnswer;
 let name;
-let userRightAnwers = 0;
 let userAreRight;
 let smallestNum;
 let biggestNum
@@ -22,6 +21,10 @@ const gameStart = () => {
     console.log('Welcome to the Brain Games!')
     name = nameAsk()
     console.log('Hello, ' + name + '!')
+}
+
+const askUserAnswer = () => {
+    userAnswer = readlineSync.question('Your answer: ');
 }
 
 const AreUserRightCheck = () => {
@@ -79,14 +82,15 @@ const clearProgressions = () => {
 export const gameEven = () => {
  gameStart()
  console.log(`Answer "yes" if the number is even, otherwise answer "no"`);
- for (let gameCounts = 0; gameCounts < rightAnswersToWin; gameCounts += 1) {
+ for (let i = 0; i < rightAnswersToWin; i += 1) {
    let number = getRandomIntInclusive(1,100);
    number % 2 === 0 ? rightAnswer = 'yes' : rightAnswer = 'no';
    console.log('Question: ' + number);
-   userAnswer = readlineSync.question('Your answer: ');
-   userAnswer === rightAnswer ? (console.log('Correct!'), userRightAnwers += 1) : console.log('Wrong!');
+   askUserAnswer();
+   AreUserRightCheck();
+   if (userAreRight !== true) return null
  }
- return (userRightAnwers === rightAnswersToWin ? Congratulations() : console.log('Try your best next time, ' + name + '!'));
+ Congratulations();
 };
 
 export function gameCalc() {
@@ -109,7 +113,7 @@ export function gameCalc() {
                 rightAnswer = number1 * number2;
                 break;
         }
-        userAnswer = readlineSync.question('Your answer: ');
+        askUserAnswer();
         AreUserRightCheck();
         if (userAreRight !== true) return null
     }
@@ -125,7 +129,7 @@ export const gameGCD = () => {
         GetSmallestAndBiggestNum(number1, number2);
         GetGreatestCommonDivider(smallestNum, biggestNum);
         console.log(`Question: ${number1} ${number2}`);
-        userAnswer = readlineSync.question('Your answer: ');
+        askUserAnswer();
         AreUserRightCheck();
         if (userAreRight !== true) return null
     }
