@@ -16,6 +16,7 @@ let progressionStep;
 let hiddenNum;
 let roundProgresstion;
 let progressionWithHidden;
+let GameNumber;
 
 export const gameStart = (WhatKindOfGame) => {
   console.log('Welcome to the Brain Games!');
@@ -40,6 +41,11 @@ export const gameStart = (WhatKindOfGame) => {
     default:
       break;
   }
+};
+
+const updateNumber = () => {
+  GameNumber = getRandomIntInclusive(1, 100);
+  return GameNumber;
 };
 
 const askUserAnswer = () => {
@@ -140,7 +146,7 @@ const numberIsPrimeCheck = (num) => {
 export const gameEven = () => {
   gameStart(1);
   for (let i = 0; i < rightAnswersToWin; i += 1) {
-    const number = getRandomIntInclusive(1, 100);
+    const number = updateNumber();
     isEven(number);
     console.log(`Question: ${number}`);
     askUserAnswer();
@@ -153,8 +159,8 @@ export const gameEven = () => {
 export const gameCalc = () => {
   gameStart(2);
   for (let u = 0; u < rightAnswersToWin; u += 1) {
-    const number1 = getRandomIntInclusive(1, 100);
-    const number2 = getRandomIntInclusive(1, 100);
+    const number1 = updateNumber();
+    const number2 = updateNumber();
     selectCalcGameAction(number1, number2);
     askUserAnswer();
     AreUserRightCheck();
@@ -166,8 +172,8 @@ export const gameCalc = () => {
 export const gameGCD = () => {
   gameStart(3);
   for (let g = 0; g < rightAnswersToWin; g += 1) {
-    const number1 = getRandomIntInclusive(1, 100);
-    const number2 = getRandomIntInclusive(1, 100);
+    const number1 = updateNumber();
+    const number2 = updateNumber();
     GetSmallestAndBiggestNum(number1, number2);
     GetGreatestCommonDivider();
     console.log(`Question: ${number1} ${number2}`);
@@ -195,7 +201,7 @@ export const gameProgression = () => {
 export const gamePrime = () => {
   gameStart(5);
   for (let h = 0; h < rightAnswersToWin; h += 1) {
-    const number = getRandomIntInclusive(1, 100);
+    const number = updateNumber();
     numberIsPrimeCheck(number);
     console.log(`Question: ${number}`);
     askUserAnswer();
