@@ -17,7 +17,7 @@ let hiddenNum;
 let roundProgresstion;
 let progressionWithHidden;
 
-const gameStart = () => {
+export const gameStart = () => {
     console.log('Welcome to the Brain Games!')
     name = nameAsk()
     console.log('Hello, ' + name + '!')

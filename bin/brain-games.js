@@ -1,5 +1,5 @@
 #!/bin/env node
 
-import { gameStart } from "../scr/cli.js"
+import { gameStart } from "../scr/index.js"
 
-gameStart()
+gameStart();
