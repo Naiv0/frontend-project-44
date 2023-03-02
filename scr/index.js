@@ -110,17 +110,18 @@ const GetGreatestCommonDivider = (num1 = smallestNum, num2 = biggestNum) => {
 const GetRandomProgression = () => {
   progressionStartNum = getRandomIntInclusive(1, 25);
   progressionStep = getRandomIntInclusive(1, 10);
-  for (let k = 1; k < progressionLength; k += 1) {
+  for (let k = 0; k < progressionLength; k += 1) {
     progression.push(progressionStartNum + (progressionStep * k));
   }
-  // console.log(progression) //debug
+  console.log(progression); // debug
   return progression;
 };
 
 const makeHiddenNumAnswer = (arrOfNums) => {
-  const numberOfNumToHideInProgression = getRandomIntInclusive(0, 9);
+  const numberOfNumToHideInProgression = getRandomIntInclusive(1, 10) - 1;
   hiddenNum = arrOfNums[numberOfNumToHideInProgression];
   rightAnswer = hiddenNum;
+  console.log(hiddenNum); // debug
   progressionWithHidden = arrOfNums;
   progressionWithHidden[numberOfNumToHideInProgression] = '..';
 };
