@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { gameGCD } from '../scr/index.js';
 
-gameGCD();
+import gcdLogic from '../scr/games/gcd.js';
+
+gcdLogic();

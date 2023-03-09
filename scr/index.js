@@ -11,6 +11,9 @@ const gameStart = (numOfGame) => {
     case 2:
       console.log('What is the result of the expression?');
       break;
+    case 3:
+      console.log('Find the greatest common divisor of given numbers.');
+      break;
     default:
       break;
   }
