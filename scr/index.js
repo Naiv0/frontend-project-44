@@ -4,6 +4,7 @@ import nameAsk from './cli.js';
 const gameStart = (numOfGame) => {
   console.log('Welcome to the Brain Games!');
   const name = nameAsk();
+  console.log(`Hello, ${name}`);
   switch (numOfGame) {
     case 1:
       console.log('Answer "yes" if the number is even, otherwise answer "no"');
