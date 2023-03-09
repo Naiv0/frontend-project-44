@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { gamePrime } from '../scr/index.js';
+import primeLogic from '../scr/games/prime.js';
 
-gamePrime();
+primeLogic();

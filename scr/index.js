@@ -17,6 +17,9 @@ const gameStart = (numOfGame) => {
     case 4:
       console.log('What number is missing in the progression?');
       break;
+    case 5:
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+      break;
     default:
       break;
   }
