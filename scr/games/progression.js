@@ -26,7 +26,7 @@ export default function progressionLogic() {
   for (let i = 0; i < rounds; i += 1) {
     const progression = getRandomProgression();
     const roundNum = GetNumTohidden();
-    rightAnswer = progression[roundNum];
+    rightAnswer = progression[roundNum - 1];
     progression.splice(roundNum, 1, '..');
     const progressionWithHidden = progression.join(' ');
     console.log(`Question: ${progressionWithHidden}`);
