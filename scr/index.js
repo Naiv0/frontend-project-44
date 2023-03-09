@@ -1,213 +1,43 @@
 import readlineSync from 'readline-sync';
 import nameAsk from './cli.js';
-import getRandomIntInclusive from './random-num-in-range-inclusive.js';
 
-const roundsCount = 3;
-let userAnswer;
-let rightAnswer;
-let name;
-let userAreRight;
-let smallestNum;
-let biggestNum;
-let progression = [];
-const progressionLength = 10;
-let progressionStartNum;
-let progressionStep;
-let hiddenNum;
-let roundProgresstion;
-let progressionWithHidden;
-let GameNumber;
-
-export const gameStart = (WhatKindOfGame) => {
-  console.log('Welcome to the Brain Games!');
-  name = nameAsk();
-  console.log(`Hello, ${name}!`);
-  switch (WhatKindOfGame) {
+const gameStart = (numOfGame) => {
+  console.log('Welcome to brain games!');
+  const name = nameAsk();
+  switch (numOfGame) {
     case 1:
       console.log('Answer "yes" if the number is even, otherwise answer "no"');
       break;
-    case 2:
-      console.log('What is the result of the expression?');
-      break;
-    case 3:
-      console.log('Find the greatest common divisor of given numbers.');
-      break;
-    case 4:
-      console.log('What number is missing in the progression?');
-      break;
-    case 5:
-      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-      break;
     default:
       break;
   }
-};
-
-const updateNumber = () => {
-  GameNumber = getRandomIntInclusive(1, 100);
-  return GameNumber;
+  return name;
 };
 
 const askUserAnswer = () => {
-  userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Answer: ');
+  return userAnswer;
 };
 
-const AreUserRightCheck = () => {
-  if (`${userAnswer}` === `${rightAnswer}`) {
+const isUserRightCheck = (Answer, rightAnswer, name) => {
+  let userAreRight;
+  if (Answer === rightAnswer) {
     console.log('Correct!');
     userAreRight = true;
   } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. \nLet's try again, ${name}!`);
+    console.log(`'${Answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. \nLet's try again, ${name}!`);
     userAreRight = false;
   }
+  return userAreRight;
 };
 
-const Congratulations = () => (console.log(`Congratulations, ${name}!`));
-
-const isEven = (num) => {
-  rightAnswer = num % 2 === 0 ? 'yes' : 'no';
+const Congratulations = (name) => {
+  console.log(`Congratulations, ${name}!`);
 };
 
-const selectCalcGameAction = (num1, num2) => {
-  switch (getRandomIntInclusive(1, 3)) {
-    case 1:
-      console.log(`Question: ${num1} + ${num2}`);
-      rightAnswer = num1 + num2;
-      break;
-    case 2:
-      console.log(`Question: ${num1} - ${num2}`);
-      rightAnswer = num1 - num2;
-      break;
-    case 3:
-      console.log(`Question: ${num1} * ${num2}`);
-      rightAnswer = num1 * num2;
-      break;
-    default:
-      console.log('woops!');
-      break;
-  }
-};
-
-const GetSmallestAndBiggestNum = (number1, number2) => {
-  if (number1 >= number2) {
-    smallestNum = number2;
-    biggestNum = number1;
-  } else {
-    smallestNum = number1;
-    biggestNum = number2;
-  }
-};
-
-const GetGreatestCommonDivider = (num1 = smallestNum, num2 = biggestNum) => {
-  for (let j = num1; j > 0; j -= 1) {
-    if (num1 % j === 0 && num2 % j === 0) {
-      rightAnswer = j;
-      break;
-    }
-  }
-};
-
-const GetRandomProgression = () => {
-  progressionStartNum = getRandomIntInclusive(1, 25);
-  progressionStep = getRandomIntInclusive(1, 10);
-  for (let k = 0; k < progressionLength; k += 1) {
-    progression.push(progressionStartNum + (progressionStep * k));
-  }
-  console.log(progression); // debug
-  return progression;
-};
-
-const makeHiddenNumAnswer = (arrOfNums) => {
-  const numberOfNumToHideInProgression = getRandomIntInclusive(1, 10) - 1;
-  hiddenNum = arrOfNums[numberOfNumToHideInProgression];
-  rightAnswer = hiddenNum;
-  console.log(hiddenNum); // debug
-  progressionWithHidden = arrOfNums;
-  progressionWithHidden[numberOfNumToHideInProgression] = '..';
-};
-
-const clearProgressions = () => {
-  progression = [];
-  progressionWithHidden = [];
-  roundProgresstion = [];
-};
-
-const numberIsPrimeCheck = (num) => {
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) {
-      rightAnswer = 'no';
-      return null;
-    }
-    // nothing
-  }
-  rightAnswer = 'yes';
-  return null;
-};
-
-export const gameEven = () => {
-  gameStart(1);
-  for (let i = 0; i < roundsCount; i += 1) {
-    const number = updateNumber();
-    isEven(number);
-    console.log(`Question: ${number}`);
-    askUserAnswer();
-    AreUserRightCheck();
-    if (userAreRight !== true) return null;
-  }
-  return Congratulations();
-};
-
-export const gameCalc = () => {
-  gameStart(2);
-  for (let u = 0; u < roundsCount; u += 1) {
-    const number1 = updateNumber();
-    const number2 = updateNumber();
-    selectCalcGameAction(number1, number2);
-    askUserAnswer();
-    AreUserRightCheck();
-    if (userAreRight !== true) return null;
-  }
-  return Congratulations();
-};
-
-export const gameGCD = () => {
-  gameStart(3);
-  for (let g = 0; g < roundsCount; g += 1) {
-    const number1 = updateNumber();
-    const number2 = updateNumber();
-    GetSmallestAndBiggestNum(number1, number2);
-    GetGreatestCommonDivider();
-    console.log(`Question: ${number1} ${number2}`);
-    askUserAnswer();
-    AreUserRightCheck();
-    if (userAreRight !== true) return null;
-  }
-  return Congratulations();
-};
-
-export const gameProgression = () => {
-  gameStart(4);
-  for (let m = 0; m < roundsCount; m += 1) {
-    clearProgressions();
-    roundProgresstion = GetRandomProgression();
-    makeHiddenNumAnswer(roundProgresstion);
-    console.log(`Question: ${progressionWithHidden.join(' ')}`);
-    askUserAnswer();
-    AreUserRightCheck();
-    if (userAreRight !== true) return null;
-  }
-  return Congratulations();
-};
-
-export const gamePrime = () => {
-  gameStart(5);
-  for (let h = 0; h < roundsCount; h += 1) {
-    const number = updateNumber();
-    numberIsPrimeCheck(number);
-    console.log(`Question: ${number}`);
-    askUserAnswer();
-    AreUserRightCheck();
-    if (userAreRight !== true) return null;
-  }
-  return Congratulations();
+export {
+  gameStart,
+  askUserAnswer,
+  isUserRightCheck,
+  Congratulations,
 };
