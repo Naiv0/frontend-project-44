@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import nameAsk from './cli.js';
 
 const gameStart = (numOfGame) => {
-  console.log('Welcome to Brain Games!');
+  console.log('Welcome to the Brain Games!');
   const name = nameAsk();
   switch (numOfGame) {
     case 1:
