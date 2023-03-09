@@ -10,10 +10,10 @@ let isRight = false;
 const isNumberIsPrime = (num) => {
   for (let i = num; i > 1; i -= 1) {
     if (num % i !== 0 || num === 1) {
-      rightAnswer = 'yes';
-    } else {
       rightAnswer = 'no';
       break;
+    } else {
+      rightAnswer = 'yes';
     }
   }
 };
