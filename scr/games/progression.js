@@ -13,7 +13,6 @@ const getRandomProgression = () => {
   for (let i = getRandomIntInclusive(1, 100), j = 0; j < 10; i += step, j += 1) {
     progression.push(i);
   }
-  console.log(progression);
   return progression;
 };
 
