@@ -11,15 +11,15 @@ function WhatExpression(number1, number2) {
   const select = getRandomIntInclusive(1, 3);
   switch (select) {
     case 1:
-      console.log(`Question : ${number1} + ${number2}`);
+      console.log(`Question: ${number1} + ${number2}`);
       rightAnswer = number1 + number2;
       break;
     case 2:
-      console.log(`Question : ${number1} - ${number2}`);
+      console.log(`Question: ${number1} - ${number2}`);
       rightAnswer = number1 - number2;
       break;
     case 3:
-      console.log(`Question : ${number1} * ${number2}`);
+      console.log(`Question: ${number1} * ${number2}`);
       rightAnswer = number1 * number2;
       break;
     default:

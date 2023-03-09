@@ -30,7 +30,7 @@ export default function progressionLogic() {
     rightAnswer = progression[roundNum];
     progression.splice(roundNum, 1, '..');
     const progressionWithHidden = progression.join(' ');
-    console.log(`Question : ${progressionWithHidden}`);
+    console.log(`Question: ${progressionWithHidden}`);
     const answer = askUserAnswer();
     isRight = isUserRightCheck(answer, rightAnswer, name);
     if (isRight !== true) {
