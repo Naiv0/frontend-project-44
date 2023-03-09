@@ -8,6 +8,9 @@ const gameStart = (numOfGame) => {
     case 1:
       console.log('Answer "yes" if the number is even, otherwise answer "no"');
       break;
+    case 2:
+      console.log('What is the result of the expression?');
+      break;
     default:
       break;
   }
@@ -21,7 +24,7 @@ const askUserAnswer = () => {
 
 const isUserRightCheck = (Answer, rightAnswer, name) => {
   let userAreRight;
-  if (Answer === rightAnswer) {
+  if (`${Answer}` === `${rightAnswer}`) {
     console.log('Correct!');
     userAreRight = true;
   } else {
