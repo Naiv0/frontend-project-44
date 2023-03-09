@@ -6,14 +6,15 @@ import {
 const rounds = 3;
 let rightAnswer;
 let isRight = false;
+const notPrimeDividers = [2, 3, 5, 7, 11];
 
 const isNumberIsPrime = (num) => {
-  for (let i = num; i > 1; i -= 1) {
-    if (num % i !== 0 || num === 1) {
+  for (let i = notPrimeDividers.length; i > 0; i -= 1) {
+    if (num % notPrimeDividers[i] !== 0 || num === 2) {
+      rightAnswer = 'yes';
+    } else {
       rightAnswer = 'no';
       break;
-    } else {
-      rightAnswer = 'yes';
     }
   }
 };
