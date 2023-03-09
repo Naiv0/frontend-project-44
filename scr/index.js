@@ -14,6 +14,9 @@ const gameStart = (numOfGame) => {
     case 3:
       console.log('Find the greatest common divisor of given numbers.');
       break;
+    case 4:
+      console.log('What number is missing in the progression?');
+      break;
     default:
       break;
   }
