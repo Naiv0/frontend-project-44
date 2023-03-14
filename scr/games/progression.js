@@ -15,17 +15,12 @@ const GetNumTohidden = () => {
   return num;
 };
 
-const getRoundProgression = () => {
+const progressionRule = () => {
   const progression = getRandomProgression();
   const roundNum = GetNumTohidden();
-  const whichIsMissing = progression[roundNum];
+  const rightAnswer = progression[roundNum];
   progression.splice(roundNum, 1, '..');
-  const progressionWithHidden = progression.join(' ');
-  return [progressionWithHidden, whichIsMissing];
-};
-
-const progressionRule = () => {
-  const [question, rightAnswer] = getRoundProgression();
+  const question = progression.join(' ');
   return [question, rightAnswer];
 };
 
