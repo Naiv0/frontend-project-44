@@ -7,7 +7,7 @@ const primeRule = () => {
   const question = getRandomIntInclusive(1, 100);
   let rightAnswer;
   for (let i = notPrimeDividers.length; i >= 0; i -= 1) {
-    if (question % notPrimeDividers[i] !== 0 || question === 2) {
+    if (question % notPrimeDividers[i] !== 0 || notPrimeDividers.includes(question) === true) {
       rightAnswer = 'yes';
     } else {
       rightAnswer = 'no';
