@@ -1,5 +1,5 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import roundLogic from '../index.js';
+import { roundLogic } from '../index.js';
 
 function calcRule() {
   const select = getRandomIntInclusive(1, 3);

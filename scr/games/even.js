@@ -1,5 +1,5 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import roundLogic from '../index.js';
+import { roundLogic } from '../index.js';
 
 const isEven = (num) => num % 2 === 0;
 

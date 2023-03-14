@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import nameAsk from './cli.js';
 
-const gameStart = (numOfGame) => {
+function gameStart(numOfGame) {
   console.log('Welcome to the Brain Games!');
   const name = nameAsk();
   console.log(`Hello, ${name}`);
@@ -25,7 +25,7 @@ const gameStart = (numOfGame) => {
       break;
   }
   return name;
-};
+}
 
 const askUserAnswer = () => {
   const userAnswer = readlineSync.question('Answer: ');
@@ -64,4 +64,7 @@ const roundLogic = (rule, gameNum) => {
   return isRight === true ? Congratulations(name) : null;
 };
 
-export default roundLogic;
+export {
+  gameStart,
+  roundLogic,
+};
