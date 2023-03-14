@@ -48,9 +48,20 @@ const Congratulations = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export {
-  gameStart,
-  askUserAnswer,
-  isUserRightCheck,
-  Congratulations,
+const roundLogic = (rule, gameNum) => {
+  const name = gameStart(gameNum);
+  let isRight = false;
+  for (let i = 0; i < 3; i += 1) {
+    const [question, rightAnswer] = rule();
+    console.log(`Question: ${question}`);
+    const answer = askUserAnswer();
+    isRight = isUserRightCheck(answer, rightAnswer, name);
+    if (isRight !== true) {
+      break;
+    }
+    // nothing
+  }
+  return isRight === true ? Congratulations(name) : null;
 };
+
+export default roundLogic;

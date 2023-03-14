@@ -1,15 +1,9 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import {
-  gameStart, askUserAnswer, isUserRightCheck, Congratulations,
-} from '../index.js';
-
-const rounds = 3;
-let rightAnswer;
-let isRight = false;
-let small;
-let big;
+import roundLogic from '../index.js';
 
 const getSmallestAndBiggestNum = (number1, number2) => {
+  let small;
+  let big;
   if (number1 < number2) {
     small = number1;
     big = number2;
@@ -17,31 +11,24 @@ const getSmallestAndBiggestNum = (number1, number2) => {
     small = number2;
     big = number1;
   }
+  return [small, big];
 };
 
-const findTheGreatestCommonDivider = (smallest, biggest) => {
+const gcdRule = () => {
+  let rightAnswer;
+  const num1 = getRandomIntInclusive(1, 100);
+  const num2 = getRandomIntInclusive(1, 100);
+  const question = `${num1} ${num2}`;
+  const [smallest, biggest] = getSmallestAndBiggestNum(num1, num2);
   for (let i = smallest; i >= 1; i -= 1) {
     if (smallest % i === 0 && biggest % i === 0) {
       rightAnswer = i;
       break;
     }
   }
+  return [question, rightAnswer];
 };
 
 export default function gcdLogic() {
-  const name = gameStart(3);
-  for (let i = 0; i < rounds; i += 1) {
-    const num1 = getRandomIntInclusive(1, 100);
-    const num2 = getRandomIntInclusive(1, 100);
-    getSmallestAndBiggestNum(num1, num2);
-    findTheGreatestCommonDivider(small, big);
-    console.log(`Question: ${num1} ${num2}`);
-    const answer = askUserAnswer();
-    isRight = isUserRightCheck(answer, rightAnswer, name);
-    if (isRight !== true) {
-      break;
-    }
-    // nothing
-  }
-  return isRight === true ? Congratulations(name) : null;
+  roundLogic(gcdRule, 3);
 }
