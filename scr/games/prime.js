@@ -21,5 +21,5 @@ const primeRule = () => {
 const desc = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 export default function primeLogic() {
-  roundLogic(getQuestionAndAnswerArray(3, primeRule, desc));
+  roundLogic(getQuestionAndAnswerArray(3, primeRule), desc);
 }
