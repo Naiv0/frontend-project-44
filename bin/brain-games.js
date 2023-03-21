@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { gameStart } from '../scr/index.js';
+import hello from '../scr/hello.js';
 
-gameStart();
+hello();
