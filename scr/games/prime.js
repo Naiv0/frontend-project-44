@@ -1,5 +1,6 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import { roundLogic } from '../index.js';
+import roundLogic from '../index.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
 const notPrimeDividers = [2, 3, 5, 7, 11];
 
@@ -17,6 +18,8 @@ const primeRule = () => {
   return [question, rightAnswer];
 };
 
+const desc = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+
 export default function primeLogic() {
-  roundLogic(primeRule, 5);
+  roundLogic(getQuestionAndAnswerArray(3, primeRule, desc));
 }

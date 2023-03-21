@@ -1,5 +1,6 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import { roundLogic } from '../index.js';
+import roundLogic from '../index.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
 const getRandomProgression = () => {
   const progression = [];
@@ -10,20 +11,22 @@ const getRandomProgression = () => {
   return progression;
 };
 
-const GetNumTohidden = () => {
+const getNumTohidden = () => {
   const num = getRandomIntInclusive(1, 10) - 1;
   return num;
 };
 
 const progressionRule = () => {
   const progression = getRandomProgression();
-  const roundNum = GetNumTohidden();
+  const roundNum = getNumTohidden();
   const rightAnswer = progression[roundNum];
   progression.splice(roundNum, 1, '..');
   const question = progression.join(' ');
   return [question, rightAnswer];
 };
 
+const desc = 'What number is missing in the progression?';
+
 export default function progressionLogic() {
-  roundLogic(progressionRule, 4);
+  roundLogic(getQuestionAndAnswerArray(3, progressionRule), desc);
 }

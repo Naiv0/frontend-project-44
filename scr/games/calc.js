@@ -1,5 +1,6 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import { roundLogic } from '../index.js';
+import roundLogic from '../index.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
 function calcRule() {
   const select = getRandomIntInclusive(1, 3);
@@ -21,11 +22,14 @@ function calcRule() {
       rightAnswer = number1 * number2;
       break;
     default:
+      console.log('error! out of bounds');
       break;
   }
   return [question, rightAnswer];
 }
 
+const desc = 'What is the result of the expression?';
+
 export default function calcLogic() {
-  roundLogic(calcRule, 2);
+  roundLogic(getQuestionAndAnswerArray(3, calcRule), desc);
 }

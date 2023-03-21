@@ -1,34 +1,24 @@
 import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
-import { roundLogic } from '../index.js';
+import roundLogic from '../index.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
-const getSmallestAndBiggestNum = (number1, number2) => {
-  let small;
-  let big;
-  if (number1 < number2) {
-    small = number1;
-    big = number2;
-  } else {
-    small = number2;
-    big = number1;
+function gcdrec(a, b) {
+  if (b) {
+    return gcdrec(b, a % b);
   }
-  return [small, big];
-};
+  return Math.abs(a);
+}
 
 const gcdRule = () => {
-  let rightAnswer;
   const num1 = getRandomIntInclusive(1, 100);
   const num2 = getRandomIntInclusive(1, 100);
   const question = `${num1} ${num2}`;
-  const [smallest, biggest] = getSmallestAndBiggestNum(num1, num2);
-  for (let i = smallest; i >= 1; i -= 1) {
-    if (smallest % i === 0 && biggest % i === 0) {
-      rightAnswer = i;
-      break;
-    }
-  }
+  const rightAnswer = gcdrec(num1, num2);
   return [question, rightAnswer];
 };
 
+const desc = 'Find the greatest common divisor of given numbers.';
+
 export default function gcdLogic() {
-  roundLogic(gcdRule, 3);
+  roundLogic(getQuestionAndAnswerArray(3, gcdRule), desc);
 }
